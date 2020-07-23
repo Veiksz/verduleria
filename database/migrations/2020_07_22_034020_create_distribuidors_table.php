@@ -14,7 +14,9 @@ class CreateDistribuidorsTable extends Migration
     public function up()
     {
         Schema::create('distribuidors', function (Blueprint $table) {
-            $table->id();
+            $table->string('rutD');
+            $table->string('razonSocial');
+            $table->string('Direccion');
             $table->timestamps();
         });
     }
