@@ -14,7 +14,8 @@ class CreateBodegasTable extends Migration
     public function up()
     {
         Schema::create('bodegas', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id_bodega');
+            $table->unsignedInteger('id_mercaderia');
             $table->timestamps();
         });
     }
