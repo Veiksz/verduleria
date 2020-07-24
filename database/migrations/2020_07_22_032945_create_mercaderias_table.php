@@ -14,7 +14,7 @@ class CreateMercaderiasTable extends Migration
     public function up()
     {
         Schema::create('mercaderias', function (Blueprint $table) {
-            $table->increments('id_mercaderia');
+            $table->increments('idm');
             $table->string('Nombre');
             $table->integer('Stock');
             $table->integer('Precio');

@@ -20,14 +20,14 @@ class MercaderiaTableSeeder extends Seeder
         Mercaderia::truncate();
 
         $mercaderia = new Mercaderia();
-        $mercaderia->id_mercaderia = "1";
+        $mercaderia->idm = "1";
         $mercaderia->Nombre = "Manzana";
         $mercaderia->Stock = 50;
         $mercaderia->Precio = 1200;
         $mercaderia->save();
 
         $mercaderia = new Mercaderia();
-        $mercaderia->id_mercaderia = "2";
+        $mercaderia->idm = "2";
         $mercaderia->Nombre = "Pera";
         $mercaderia->Stock = 30;
         $mercaderia->Precio = 1500;
@@ -36,8 +36,8 @@ class MercaderiaTableSeeder extends Seeder
         Bodega::truncate();
 
         $bodega = new Bodega();
-        $bodega->id_bodega = "1";
-        $bodega->id_mercaderia = "2";
+        $bodega->idm = "1";
+        $bodega->idb = "2";
         $bodega->save();
 
         Cliente::truncate();
@@ -73,12 +73,12 @@ class MercaderiaTableSeeder extends Seeder
         Local::truncate();
 
         $local = new Local();
-        $local->id_local = "1";
+        $local->idLocal = "1";
         $local->direccion = "Ficticia #2998";
-        $local->id_bodega = "1";
-        $local->id_cliente = "1";
-        $local->id_trabajador = "1";
-        $local->id_distribuidor = "1";
+        $local->idBodega = "1";
+        $local->rutC = "1";
+        $local->rutV = "1";
+        $local->rutD = "1";
         $local->save();
     }
 }
