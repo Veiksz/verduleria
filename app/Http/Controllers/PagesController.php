@@ -11,6 +11,18 @@ class PagesController extends Controller
         return view('welcome');
     }
 
+    public function CrearMercaderia(Request $request){
+        //return $request->all();
+
+        $mercaderia = new App\Mercaderia;
+        $mercaderia->Nombre = $request->Nombre;
+        $mercaderia->Stock = $request->Stock;
+        $mercaderia->Precio = $request->Precio;
+        $mercaderia->save();
+
+        return back()->with('mensaje', 'Producto ingresado.');
+    }
+
     public function mercaderia(){
         $mercaderia = App\Mercaderia::all();
         return view('mercaderia', compact('mercaderia'));
@@ -21,9 +33,9 @@ class PagesController extends Controller
         return view('clientes', compact('cliente'));
     }
 
-    public function trabajador(){
-        $trabajador = App\Trabajador::all();
-        return view('trabajador', compact('trabajador'));
+    public function vendedor(){
+        $vendedor = App\Vendedor::all();
+        return view('trabajador', compact('vendedor'));
     }
 
     public function distribuidor(){

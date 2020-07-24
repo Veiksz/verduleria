@@ -15,10 +15,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'PagesController@inicio');
 
-Route::get('trabajador', 'PagesController@trabajador')->name('trabajador');
+Route::get('trabajador', 'PagesController@vendedor')->name('trabajador');
 
 Route::get('clientes', 'PagesController@clientes')->name('clientes');
 
 Route::get('mercaderia', 'PagesController@mercaderia')->name('mercaderia');
+
+Route::post('/', 'PagesController@CrearMercaderia')->name('mercaderia.crear');
 
 Route::get('distribuidor', 'PagesController@distribuidor')->name('distribuidor');

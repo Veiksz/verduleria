@@ -17,7 +17,7 @@
     <title>Hello, world!</title>
   </head>
   <body>
-    <div class='container' style="margin-top: 10px">
+    <div class='container' style="margin-top: 15px;">
       <a href="{{ route('mercaderia') }}" class="btn btn-info" style="margin-right: 230px">Mercaderia</a>
       <a href="{{ route('clientes') }}" class="btn btn-info"style="margin-right: 230px">Clientes</a>
       <a href="{{ route('trabajador') }}" class="btn btn-info"style="margin-right: 230px">Trabajador</a>
