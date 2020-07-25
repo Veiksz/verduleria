@@ -1,5 +1,5 @@
 @extends('plantilla')
 
 @section('seccion')
-    <h1>Editar nota {{ $mercaderia->id }}</h1>
+    <h1>Editar producto {{ $mercaderia->idm }}</h1>
 @endsection

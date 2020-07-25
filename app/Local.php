@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Local extends Model
 {
+    protected $primaryKey = 'idl';
+
     public function bodega(){
         return $this->belongsTo(Bodega::class);
     }
