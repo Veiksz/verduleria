@@ -43,13 +43,13 @@ class MercaderiaTableSeeder extends Seeder
         Cliente::truncate();
 
         $cliente = new Cliente();
-        $cliente->rutC = "111-1";
+        $cliente->rutC = "111";
         $cliente->nombre = "Claudia";
         $cliente->apellido = "Rosales";
         $cliente->save();
 
         $cliente = new Cliente();
-        $cliente->rutC = "222-2";
+        $cliente->rutC = "222";
         $cliente->nombre = "Alfredo";
         $cliente->apellido = "Castro";
         $cliente->save();
@@ -57,7 +57,7 @@ class MercaderiaTableSeeder extends Seeder
         Vendedor::truncate();
 
         $vendedor = new Vendedor();
-        $vendedor->rutV = "333-3";
+        $vendedor->rutV = "333";
         $vendedor->nombre = "Maria";
         $vendedor->apellido = "Plaza";
         $vendedor->save();
@@ -65,7 +65,7 @@ class MercaderiaTableSeeder extends Seeder
         Distribuidor::truncate();
 
         $distribuidor = new Distribuidor();
-        $distribuidor->rutD = "444-4";
+        $distribuidor->rutD = "444";
         $distribuidor->razonSocial = "Vendedors S.A.";
         $distribuidor->direccion = "Ficticia #231";
         $distribuidor->save();
