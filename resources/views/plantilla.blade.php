@@ -14,7 +14,12 @@
       }
     </style>
 
-    <title>Hello, world!</title>
+    <title>
+      @isset($title)
+            {{ $title }} | 
+        @endisset
+        {{ config('app.name') }}
+    </title>
   </head>
   <body>
     <div class='container' style="margin-top: 15px;">

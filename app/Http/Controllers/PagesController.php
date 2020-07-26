@@ -115,6 +115,47 @@ class PagesController extends Controller
         return view('trabajador', compact('vendedor'));
     }
 
+    public function CrearVendedor(Request $request){
+        //return $request->all();
+
+        $request->validate([
+            'rutV' => 'required',
+            'Nombre' => 'required',
+            'Apellido' => 'required'
+        ]);
+
+        $vendedor = new App\Vendedor;
+        $vendedor->rutV = $request->rutV;
+        $vendedor->Nombre = $request->Nombre;
+        $vendedor->Apellido = $request->Apellido;
+        $vendedor->save();
+
+        return back()->with('mensaje', 'Vendedor ingresado.');
+    }
+
+    public function EditarVendedor($rutV){
+        $vendedor = App\Vendedor::findOrFail($rutV);
+
+        return view('vendedor.editar', ['vendedor'=>$vendedor]);
+    }
+
+    public function ModificarVendedor(Request $request, $rutV){
+        $vendedor = App\Vendedor::findOrFail($rutV);
+        $vendedor->rutV = $request->rutV;
+        $vendedor->Nombre = $request->Nombre;
+        $vendedor->Apellido = $request->Apellido;
+        $vendedor->save();
+
+        return back()->with('mensaje', 'Vendedor actualizado');
+    }
+
+    public function EliminarVendedor($rutV){
+        $vendedor = App\Vendedor::findOrFail($rutV);
+        $vendedor->delete();
+
+        return back()->with('mensaje', 'Vendedor eliminado');
+    }
+
     // Controlador DISTRIBUIDOR
 
     public function distribuidor(){
