@@ -13,3 +13,8 @@
     Pendiente la creación de llaves foráneas en Local.
     Pendiente la creación de tablas que muestren los datos guardados en la BD.
     Pendiente diseño de la interfaz.
+
+26/07 v1.0.2: Funcionamiento correcto.
+
+    CRUD terminados.
+    Diseño de interfaz avanzado, se puede mejorar.
