@@ -72,8 +72,8 @@
             @endif
 
             <div class="content">
-                <div class="title m-b-md">
-                    Verdulería
+                <div class="title m-b-md" style="margin-bottom: 60px">
+                    <img src="{{ asset('img/logo.png') }}" alt="no logo">
                 </div>
 
                 <div class="links">

@@ -10,6 +10,7 @@
 
     <style>
       html, body{
+        background-color: #eaeaea;
         font-family: 'Nunito', sans-serif;
       }
     </style>
@@ -22,10 +23,11 @@
     </title>
   </head>
   <body>
-    <div class='container' style="margin-top: 15px;">
-      <a href="{{ route('mercaderia') }}" class="btn btn-info" style="margin-right: 230px">Mercaderia</a>
-      <a href="{{ route('clientes') }}" class="btn btn-info"style="margin-right: 230px">Clientes</a>
-      <a href="{{ route('trabajador') }}" class="btn btn-info"style="margin-right: 230px">Trabajador</a>
+    <div class='container' style="margin-top: 15px; padding-bottom: 10px; border-bottom: 3px solid #a2a2a2;">
+      <img src="{{ asset('img/logo.png') }}" alt="no logo" style="width: 180px; height: 50px; margin-right: 120px">
+      <a href="{{ route('mercaderia') }}" class="btn btn-info" style="margin-right: 120px">Mercaderia</a>
+      <a href="{{ route('clientes') }}" class="btn btn-info"style="margin-right: 120px">Clientes</a>
+      <a href="{{ route('trabajador') }}" class="btn btn-info"style="margin-right: 120px">Trabajador</a>
       <a href="{{ route('distribuidor') }}" class="btn btn-info">Distribuidor</a>
     </div>
     
