@@ -93,7 +93,6 @@ class PagesController extends Controller
 
     public function ModificarCliente(Request $request, $rutC){
         $cliente = App\Cliente::findOrFail($rutC);
-        $cliente->rutC = $request->rutC;
         $cliente->Nombre = $request->Nombre;
         $cliente->Apellido = $request->Apellido;
         $cliente->save();
@@ -141,7 +140,6 @@ class PagesController extends Controller
 
     public function ModificarVendedor(Request $request, $rutV){
         $vendedor = App\Vendedor::findOrFail($rutV);
-        $vendedor->rutV = $request->rutV;
         $vendedor->Nombre = $request->Nombre;
         $vendedor->Apellido = $request->Apellido;
         $vendedor->save();
@@ -161,5 +159,45 @@ class PagesController extends Controller
     public function distribuidor(){
         $distribuidor = App\Distribuidor::all();
         return view('distribuidor', compact('distribuidor'));
+    }
+
+    public function CrearDistribuidor(Request $request){
+        //return $request->all();
+
+        $request->validate([
+            'rutD' => 'required',
+            'razonSocial' => 'required',
+            'Direccion' => 'required'
+        ]);
+
+        $distribuidor = new App\Distribuidor;
+        $distribuidor->rutD = $request->rutD;
+        $distribuidor->razonSocial = $request->razonSocial;
+        $distribuidor->Direccion = $request->Direccion;
+        $distribuidor->save();
+
+        return back()->with('mensaje', 'Distribuidor ingresado.');
+    }
+
+    public function EditarDistribuidor($rutD){
+        $distribuidor = App\Distribuidor::findOrFail($rutD);
+
+        return view('distribuidor.editar', ['distribuidor'=>$distribuidor]);
+    }
+
+    public function ModificarDistribuidor(Request $request, $rutD){
+        $distribuidor = App\Distribuidor::findOrFail($rutD);
+        $distribuidor->razonSocial = $request->razonSocial;
+        $distribuidor->Direccion = $request->Direccion;
+        $distribuidor->save();
+
+        return back()->with('mensaje', 'Distribuidor actualizado');
+    }
+
+    public function EliminarDistribuidor($rutD){
+        $distribuidor = App\Distribuidor::findOrFail($rutD);
+        $distribuidor->delete();
+
+        return back()->with('mensaje', 'Distribuidor eliminado');
     }
 }
